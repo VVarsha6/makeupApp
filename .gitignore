@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Local environment — NEVER commit this
+.env
+.env.local
+
+# Build output
+dist/
+
+# Editor
+.DS_Store
+.vscode/settings.json
+
+.vercel
+
+notes.txt

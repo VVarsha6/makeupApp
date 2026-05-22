@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #faf6ee;
+    color: #1a1a1a;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: #8aab8a;
+    color: white;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-cream-200;
+  }
+
+  .btn-primary {
+    @apply bg-ink-900 text-white font-body font-medium px-6 py-3 rounded-full 
+           hover:bg-ink-800 active:scale-95 transition-all duration-150 
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-sage {
+    @apply bg-sage-500 text-white font-body font-medium px-6 py-3 rounded-full 
+           hover:bg-sage-600 active:scale-95 transition-all duration-150 
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply border border-ink-300 text-ink-700 font-body font-medium px-6 py-3 rounded-full 
+           hover:border-ink-900 hover:text-ink-900 active:scale-95 transition-all duration-150;
+  }
+
+  .label-clean {
+    @apply bg-sage-500 text-white text-xs font-mono font-medium px-2.5 py-1 rounded-full uppercase tracking-wider;
+  }
+
+  .label-caution {
+    @apply bg-amber-400 text-amber-900 text-xs font-mono font-medium px-2.5 py-1 rounded-full uppercase tracking-wider;
+  }
+
+  .label-avoid {
+    @apply bg-blush-500 text-white text-xs font-mono font-medium px-2.5 py-1 rounded-full uppercase tracking-wider;
+  }
+
+  .label-unknown {
+    @apply bg-ink-300 text-ink-800 text-xs font-mono font-medium px-2.5 py-1 rounded-full uppercase tracking-wider;
+  }
+
+  .ingredient-row {
+    @apply flex items-start gap-3 py-3 border-b border-cream-200 last:border-0 animate-fade-up;
+  }
+}
