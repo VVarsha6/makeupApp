@@ -1,87 +1,51 @@
 # SkinLens 🧴
 
-Scan skincare ingredient labels and get instant, personalised analysis — powered by Mistral AI.
-
-## Features (Phase 1)
-- 📸 Camera capture or photo upload
-- ✍️ Manual text input as fallback
-- 🔍 AI reads the ingredients section from the photo automatically
-- 🟢 Clean / 🟡 Caution / 🔴 Avoid rating per ingredient
-- ⚠️ Personal allergy & sensitivity flagging
-- 💾 Profile saved locally in browser (skin type, allergies)
-- 📱 Fully responsive — mobile, tablet, desktop
-- 🔑 API key hidden server-side (users never see it)
+**Live app → [skinlens-kappa.vercel.app](https://skinlens-kappa.vercel.app)**
 
 ---
 
-## Local Setup in VSCode
+## What is SkinLens?
 
-### 1. Install dependencies
-```bash
-npm install
-```
+SkinLens is a free web app that lets you scan any skincare product's ingredient label and instantly understand what's in it — and whether it's good for you.
 
-### 2. Install Vercel CLI (needed to run serverless functions locally)
-```bash
-npm install -g vercel
-```
-
-### 3. Get your free Mistral API key
-- Go to https://console.mistral.ai
-- Sign up (no credit card needed)
-- Create an API key under API Keys
-
-### 4. Add your key to .env
-Open the `.env` file and replace the placeholder:
-```
-MISTRAL_API_KEY=your_actual_key_here
-```
-
-### 5. Run locally
-```bash
-vercel dev
-```
-Open http://localhost:3000 — the serverless function runs automatically.
-
-> Note: use `vercel dev` not `npm run dev` so the /api/analyse function works locally.
+No sign up. No downloads. Just open the link and go.
 
 ---
 
-## Deploy to Vercel
+## What it does
 
-### Step 1 — Push to GitHub
-```bash
-git init
-git add .
-git commit -m "first commit"
-# create a repo on github.com, then:
-git remote add origin https://github.com/yourusername/skinlens.git
-git push -u origin main
-```
+**Scan or type ingredients**
+Take a photo of any skincare label directly from your phone camera, upload an existing photo, or manually type/paste the ingredients if the photo isn't reading clearly.
 
-### Step 2 — Import to Vercel
-1. Go to https://vercel.com
-2. Click "Add New Project" → import your GitHub repo
-3. Click Deploy (zero config needed — Vite is auto-detected)
+**Instant ingredient analysis**
+Every ingredient gets rated Clean, Caution, or Avoid with a plain English explanation of why — no chemistry degree needed.
 
-### Step 3 — Add your API key as an environment variable
-1. In your Vercel project → Settings → Environment Variables
-2. Add: `MISTRAL_API_KEY` = your key
-3. Redeploy (or it picks up on next deploy)
+**Personalised allergy flagging**
+Set up your skin sensitivities and allergies once in your profile. Any matching ingredients are highlighted in red with a personal warning every time you scan.
 
-Your app is now live at `https://your-project.vercel.app` 🎉
+**Overall product verdict**
+Get a quick summary verdict — Clean, Mostly Clean, Mixed, or Avoid — so you can decide at a glance whether a product is right for you.
+
+**Works on everything**
+Designed to work on iPhone, Android, iPad, tablet, and desktop. No app store install needed — just open the link in your browser.
 
 ---
 
-## How it works
-- Frontend (React) → calls `/api/analyse`
-- `/api/analyse` (Vercel serverless function) → calls Mistral API with your key
-- Your API key never touches the browser
+## How to use it
+
+1. Open [skinlens-kappa.vercel.app](https://skinlens-kappa.vercel.app) on any device
+2. Tap **Profile** to set your skin type and any allergies
+3. Take a photo of an ingredient label or paste the ingredients manually
+4. Read your personalised analysis
 
 ---
 
-## Coming up (Phase 2)
-- Skin type % match recommendations
-- Product history log
-- Side-by-side product comparison
-- Hyram-inspired ingredient scoring framework
+## Disclaimer
+
+SkinLens provides general ingredient information only and is not a substitute for professional medical advice. Always consult a dermatologist or allergist for personal medical guidance.
+
+---
+
+## Tech
+
+Built with React, Tailwind CSS, Vite, and Mistral AI. Deployed on Vercel.
